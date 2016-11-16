@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单</title>
+		<style>
+          #ask{
+              margin-left: 40px;
+              font-size: 10px;
+              color:gray;
+          }
+          .conter{
+          	position: absolute;
+          	margin:auto;
+          	left:0;
+          	top:0;
+          	bottom:0;
+          	right:0;
+          	width:300px;
+          	height:100px;
+          }
+		</style>
+	</head>
+	<body>
+	<div class="conter">
+		<from  method="POST">
+		    <label>名称</label>
+			<input type="text" id="demo">
+			<button type="button" onclick="myFunction()">提交</button></br>
+            <p id="ask">必填，长度为4~16个字符</p>
+		</from>
+ </div>
+<script>
+   function myFunction(){
+		s=document.getElementById("ask").value;
+		var x=document.getElementById("demo").value;
+		var len=x.length;         
+        
+       //判断不能为空 
+		if(x=null||x=="")
+		{
+			s="姓名不能为空";
+			 document.getElementById("ask").innerHTML=s;
+			 document.x.focus();
+			 return false;
+		}
+		//判断长度在4~16之外的
+	  if(len<4||len>16){
+	    s="需填长度为4~16个字符";
+	    document.getElementById("ask").innerHTML=s;
+	    document.x.focus();
+	    return false;
+	}
+	//判断长度在4~16的
+	 if(len>=4||len<=16){
+	    s="名称格式正确";
+	    document.getElementById("ask").innerHTML=s;
+	    document.x.focus();
+	    return false;
+	}
+
+}
+
+
+</script>
+
+	</body>
+<html>
